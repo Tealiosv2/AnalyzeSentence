@@ -6,8 +6,11 @@
     <title>Document</title>
 </head>
 <body>
-    <textarea id="text" rows="4" cols="50"></textarea><br>
-    <button id="analyze">Analyze</button><br>
+    <form method="POST" action="/process">
+        <textarea name="input_text" rows="4" cols="50"></textarea>
+        <br>
+        <input type="submit" value="Process">
+    </form>
     <p id="result"></p>
 </body>
 </html>
