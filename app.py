@@ -24,11 +24,12 @@ def process():
     label = sentiment_analysis(input_text)[0]['label']
     score = sentiment_analysis(input_text)[0]['score']
 
-    generated_text = text_generation_pipeline(input_text, max_length=50, num_return_sequences=1)[0]['generated_text']
+    generated_text = text_generation_pipeline(input_text, max_length=30, do_sample=True, top_k=50, top_p=0.95)[0][
+        'generated_text']
 
-    rephrased_suggestion = generated_text.strip()
+    similar_phrase = generated_text.strip()
 
-    return render_template("index.html", label=label, score=score, alternative_statement=rephrased_suggestion)
+    return render_template("index.html", label=label, score=score, alternative_statement=similar_phrase)
 
 
 if __name__ == "__main__":
