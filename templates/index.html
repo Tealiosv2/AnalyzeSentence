@@ -6,11 +6,17 @@
     <title>Document</title>
 </head>
 <body>
+    <p>
+        Wyman N, Sharon H
+    </p>
     <form method="POST" action="/process">
         <textarea name="input_text" rows="4" cols="50"></textarea>
         <br>
         <input type="submit" value="Process">
     </form>
     <p id="result"></p>
+    <p>Label: {{ label }}</p>
+    <p>Score: {{ score }}</p>
+<p>Alternative: {{ alternative_statement }}</p>
 </body>
 </html>
